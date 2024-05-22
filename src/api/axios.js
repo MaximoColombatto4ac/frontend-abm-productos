@@ -1,7 +1,7 @@
 import axios  from "axios";
 
 export const apiInstance = axios.create({
-    baseURL: "https://backend-abm-productos.onrender.com/api",
+    baseURL: import.meta.env.VITE_APIURL+"api",
     withCredentials: false,
 })
 export const ingredientesInstance = axios.create({

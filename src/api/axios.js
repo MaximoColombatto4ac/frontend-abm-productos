@@ -2,7 +2,7 @@ import axios  from "axios";
 
 export const apiInstance = axios.create({
     baseURL: import.meta.env.VITE_APIURL+"api",
-    withCredentials: false,
+    withCredentials: true,
 })
 export const ingredientesInstance = axios.create({
     baseURL: `${import.meta.env.VITE_APIURL}ingredientes`,

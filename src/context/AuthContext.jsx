@@ -33,7 +33,8 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(user);
       console.log(res);
-      const cookie = Cookies.get();      
+      const cookie = Cookies.get();  
+      Cookies.set('saclier', cookie.token, { expires: 7 });    
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (error) {

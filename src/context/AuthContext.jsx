@@ -72,6 +72,7 @@ export const AuthProvider = ({ children }) => {
     };
     const cookie = Cookies.get();
     if (cookie.token) {
+      Cookies.set('saclier', cookie.token, { expires: 7 });
       verify();
       return;
     }

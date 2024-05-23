@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(user);
       console.log(res);
+      const cookie = Cookies.get();      
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (error) {
@@ -72,7 +73,6 @@ export const AuthProvider = ({ children }) => {
     };
     const cookie = Cookies.get();
     if (cookie.token) {
-      Cookies.set('saclier', cookie.token, { expires: 7 });
       verify();
       return;
     }
